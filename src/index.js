@@ -6,12 +6,13 @@ import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, Route, RouterProvider } from 'react-router-dom'
 import Header from './components/Header';
 import Footer from './components/Footer';
+import {ErrorPageNotFound} from "./pages/ErrorPageNotFound"
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <h1>404 Not Found</h1>
+    errorElement: <ErrorPageNotFound />,
   },
   {
     path: "/Appartement",

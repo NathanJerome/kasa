@@ -1,3 +1,5 @@
+@use "../scss/variables.scss" as *;
+
 .navbar{
     display: flex;
     /*gap: 62%;*/
@@ -9,7 +11,7 @@
 }
 
 .navbar-list{
-    color: #FF6060;
+    color: $primaryColor;
     list-style-type: none;
     display: flex;
     align-content: stretch;
@@ -24,7 +26,7 @@ li{
     margin: 0px 20px;
 }
 a {
-    color: #FF6060;
+    color: $primaryColor;
     text-decoration: none;
 }
 .active {

@@ -1,0 +1,22 @@
+@use '../scss/variables.scss' as *;
+
+* {
+    color: $primaryColor;
+}
+.ErrorPage{
+text-align: center;
+margin-bottom: 90px;
+    h1{
+        font-size: 288px;
+        font-weight: 700;
+        margin-bottom: 100px;
+        margin-top: 0;
+        
+}
+    h2{
+        margin-bottom: 100px;
+    }
+    a{
+        text-decoration: underline;
+    }
+}

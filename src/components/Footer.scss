@@ -1,12 +1,14 @@
+@use "../scss/variables.scss" as *;
+
 footer{
-    background-color: black;
+    background-color: $blackColor;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     flex-wrap: wrap;
-    position: relative;
-    width: 100%;
     bottom: 0;
+    left: 0;
+    width: 100%;
     padding-top: 15px;
 }
 .logo-footer{

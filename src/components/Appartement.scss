@@ -1,5 +1,7 @@
+@use '../scss/variables.scss' as *;
+
 .background-grey{
-    background-color: #F6F6F6;
+    background-color: $greyBackGround;
     position: relative;
     border-radius: 40px;
     margin: 30px 5%;
@@ -22,7 +24,7 @@
     flex-direction: row;
 }
 .img-article{
-    background-image: linear-gradient(to top, #863535, #ff6060);
+    background-image: $gradient;
     border-radius: 5%;
     height: 340px;
     width: 100%;
