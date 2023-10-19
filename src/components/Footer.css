@@ -1,0 +1,25 @@
+footer{
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    padding-top: 15px;
+}
+.logo-footer{
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50px;
+
+
+}
+.p-reserved{
+    color: white;
+    width: 100%;
+    text-align: center;
+
+}

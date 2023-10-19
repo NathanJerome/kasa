@@ -1,0 +1,32 @@
+.navbar{
+    display: flex;
+    /*gap: 62%;*/
+    margin: 10px 5%;
+
+}
+.logo{
+    justify-content: flex-start;
+}
+
+.navbar-list{
+    color: #FF6060;
+    list-style-type: none;
+    display: flex;
+    align-content: stretch;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
+    justify-content: flex-end;
+}
+li{
+    align-items: center;
+    margin: 0px 20px;
+}
+a {
+    color: #FF6060;
+    text-decoration: none;
+}
+.active {
+    text-decoration: underline;
+}
