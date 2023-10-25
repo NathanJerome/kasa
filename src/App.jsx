@@ -10,7 +10,10 @@ function App() {
   return (
     <div>
     <Header />
-    <Banner />
+    <Banner 
+      src="banner_img.png"
+      txt="Chez vous, partout et ailleurs"
+    />
     <Appartement />
     <Footer />
     </div>
