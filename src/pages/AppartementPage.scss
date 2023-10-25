@@ -1,0 +1,129 @@
+@use '../scss/variables.scss' as *;
+
+main{
+    margin: 10px 5%;
+    .divImageAppartement{
+
+        .image_appartement{
+            width: 100%;
+            object-fit: cover;
+            height: 415px;
+            border-radius: 20px;
+
+        }
+    }
+    .appartement_container{
+        .appartement_content{
+
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+            .appartement_info{
+                h1, h2 {
+                    margin: 5px 0;
+                }
+                h2{
+                    font-size: 18px;
+                }
+
+                .tag_container{
+                    display: flex;
+                    .tag{
+                        color: $white;
+                        background-color: $primaryColor;
+                        border-radius: 20px;
+                        width: 150px;
+                        margin-right: 1%;
+                        text-align: center;
+                    }
+                }
+                
+            }
+            .owner_info{
+                text-align: right;
+                width: 16%;
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+                justify-content: space-between;
+
+
+                h2{
+                    width: 72%;
+                }
+                .owner_img{
+                    border-radius: 100%;
+                    width: 64px;
+                    height: 64px;
+                }
+
+                .owner_star{
+                    span{
+                        font-size: 40px;
+                    }
+                }
+                
+                
+            }
+        }
+
+    .dropdown{
+        display: flex;
+        justify-content: space-between;
+        transition: max-height 0.3s ease-in-out;
+        &.expanded {
+            max-height: 500px; /* Ajustez la valeur en fonction de la hauteur du contenu */
+          }
+        
+        .container_dropdown{
+            width: 45%;
+            
+            
+            .dropdown_header{
+                cursor: pointer;
+                background-color: $primaryColor;
+                border-radius: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                i {
+                    left: 10px;
+                    position: relative;
+                    color: $white;
+                    width: 30px;
+                    @keyframes scrollDown {
+                        from{
+                            transform: rotateX(180deg);
+                        }
+                        to{
+                            transform: rotateX(360deg);
+                        }
+                    }
+                    @keyframes scrollUp {
+                        from{
+                            transform: rotateX(360deg);
+                        }
+                        to{
+                            transform: rotateX(180deg);
+                        }
+                    }
+
+                }
+                h3{
+                    color: $white;
+                    margin-left: 10px;
+                    background-color: $primaryColor;
+                }
+            }
+           
+            .dropdown_text{
+                p{
+                   background-color: $greyBackGround;
+                   margin: 0;
+                }
+            }
+        }
+     }
+    }
+}

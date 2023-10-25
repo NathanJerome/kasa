@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { createBrowserRouter, Route, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Header from './components/Header';
 import Footer from './components/Footer';
 import {ErrorPageNotFound} from "./pages/ErrorPageNotFound"
+import { AppartementPage } from './pages/AppartementPage';
+import { About } from './pages/About';
 
 const router = createBrowserRouter([
   {
@@ -18,18 +20,14 @@ const router = createBrowserRouter([
     path: "/Appartement",
     element: 
      <>
-      <Header />
-        <h1> Nos appartement</h1>
-      <Footer />
+        <AppartementPage />
      </>
   },
   {
     path: "/about",
     element: 
     <>
-    <Header />
-      <h1> A propos</h1>
-    <Footer />
+    <About />
    </>
   }
 
