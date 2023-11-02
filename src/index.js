@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
@@ -17,7 +17,14 @@ const router = createBrowserRouter([
     errorElement: <ErrorPageNotFound />,
   },
   {
-    path: "/Appartement",
+    path: "/appartement/:id",
+    element: 
+     <>
+        <AppartementPage />
+     </>
+  },
+  {
+    path: "/appartement/",
     element: 
      <>
         <AppartementPage />

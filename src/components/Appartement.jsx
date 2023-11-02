@@ -1,36 +1,19 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Appartement.scss'
+import { Link } from 'react-router-dom'
 
-function Appartement() {
+function Appartement(props) {
+
   return (
-    <div className='background-grey'>
-        <div className='flex-appartement'>
             <article className='article-appartement'>
-                <div className='img-article'></div>
-                <p className='name'>Titre de la location</p>
+                 <Link to={`/appartement/${props.id}`}>
+                    <div className='img-article'>
+                        <img className='img' src={props.cover}></img>
+                    </div>
+                    <p className='name'>{props.title}</p>
+                </Link> 
             </article>
-            <article className='article-appartement'>
-                <div className='img-article'></div>
-                <p className='name'>Titre de la location</p>
-            </article>
-            <article className='article-appartement'>
-                <div className='img-article'></div>
-                <p className='name'>Titre de la location</p>
-            </article>
-            <article className='article-appartement'>
-                <div className='img-article'></div>
-                <p className='name'>Titre de la location</p>
-            </article>
-            <article className='article-appartement'>
-                <div className='img-article'></div>
-                <p className='name'>Titre de la location</p>
-            </article>
-            <article className='article-appartement'>
-                <div className='img-article'></div>
-                <p className='name'>Titre de la location</p>
-            </article>
-        </div>
-    </div>
+        
   )
 }
 

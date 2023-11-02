@@ -9,7 +9,7 @@ import Banner from '../components/Banner';
 export function About(){
 
     return(
-        <>
+        <> 
             <Header />
             <Banner 
                 src = 'banner_imgAbout.png'
