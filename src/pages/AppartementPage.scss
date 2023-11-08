@@ -62,6 +62,14 @@ main{
                     width: 100%;
                     span{
                         font-size: 40px;
+                        &.on{
+                            color: #FF6060;
+                        }
+                        
+                        &.off{
+                            color: #E3E3E3;
+                        }
+                        
                     }
                 }
                 

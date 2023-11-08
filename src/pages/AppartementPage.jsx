@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import './AppartementPage.scss'
 import  Header from '../components/Header'
 import Footer from '../components/Footer'
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import DropdownInfo from '../components/DropdownInfo';
 
 
 
@@ -12,38 +13,56 @@ export function AppartementPage(){
         setIsVisible (!isVisible);
     }
 
+    const location = useLocation()
+    const [selectedAppartement, setSelectedAppartement] = useState(null)
+    console.log("location", location);
+    console.log("our location is:", location.state.appartementId)
+
+    useEffect(fetchAppartementData, [])
+
+    function fetchAppartementData(){
+        fetch("logements.json").then((response) => response.json())
+        .then((appartements) => {
+           const selectedAppartement =  appartements.find(appartement => appartement.id === location.state.appartementId)
+           setSelectedAppartement(selectedAppartement);
+        
+        })
+        .catch(console.error)
+    }
+
+    if(selectedAppartement == null) return <div>...Chargement</div>
+
     return(
         <>
             <Header />
             <main>
                 <div className="divImageAppartement">
-                    <img className="image_appartement" src="banner_appartement.png" alt="image d un appartement"></img>
+                    <img className="image_appartement" src={selectedAppartement.pictures[0]} alt="image d un appartement"></img>
                 </div>
                 <div className="appartement_container">
                     <div className="appartement_content">
                         <div className="appartement_info">
-                            <h1>Cozy loft on the Canal Saint-Martin</h1>
-                            <h2>Paris, Île-de-France</h2>
+                            <h1>{selectedAppartement.title}</h1>
+                            <h2>{selectedAppartement.location}</h2>
                             <div className="tag_container">
-                                <h3 className="tag">Cozy</h3>
-                                <h3 className="tag">Canal</h3>
-                                <h3 className="tag">Paris</h3>
+                            {selectedAppartement.tags.map((tag) => 
+                                    <span>{tag}</span>
+                                )
+                            }
                             </div>
                         </div>
                         <div className="owner_info">
-                            <h2>Alexandre Dumas</h2>
-                            <img className="owner_img" src="profile-picture-1.jpg"></img>
+                            <h2>{selectedAppartement.host.name}</h2>
+                            <img className="owner_img" src={selectedAppartement.host.picture}></img>
                             <div className="owner_star">
-                                <span>★</span>
-                                <span>★</span>
-                                <span>★</span>
-                                <span>☆</span>
-                                <span>☆</span>
+                            {[1,2,3,4,5].map((num) => (
+                                <span className={selectedAppartement.rating >= num ? "on" : "off"}>★</span>
+                            ))}
                             </div>
                         </div>
                     </div>
                     <div className="dropdown">
-                        <div className="container_dropdown">
+                        {/* <div className="container_dropdown">
                             <div className="dropdown_header">
                                 <h3 className="dropdown_title">Description</h3>
                                 <i className="fa-solid fa-chevron-up" onClick={showContent}></i>
@@ -60,7 +79,17 @@ export function AppartementPage(){
                             <div className="dropdown_text">
                             {isVisible && <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Turpis in eu mi bibendum neque egestas congue quisque. Facilisis volutpat est velit egestas. Pretium fusce id velit ut tortor. Id donec ultrices tincidunt arcu. Egestas congue quisque egestas diam in arcu cursus euismod. Quam lacus suspendisse faucibus interdum posuere. Sed velit dignissim sodales ut eu sem. Cursus vitae congue mauris rhoncus aenean vel elit scelerisque mauris. Urna porttitor rhoncus dolor purus non enim praesent elementum. Risus at ultrices mi tempus imperdiet. Cursus euismod quis viverra nibh. Mattis enim ut tellus elementum sagittis.</p>}
                             </div>
-                        </div>
+                        </div> */}
+                        <DropdownInfo 
+                            title="Description"
+                            description={selectedAppartement.description}
+                         />
+                         <DropdownInfo 
+                            title="Equipement"
+                            description={selectedAppartement.equipments.map((eq) => (
+                                <li>{eq}</li>
+                            ))}
+                         />
                     </div>
                 </div>
             </main>
