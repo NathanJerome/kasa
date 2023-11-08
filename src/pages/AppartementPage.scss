@@ -77,7 +77,7 @@ main{
             }
         }
 
-    .dropdown{
+    .dropdowns{
         display: flex;
         justify-content: space-between;
         transition: max-height 0.3s ease-in-out;
@@ -85,8 +85,11 @@ main{
             max-height: 500px; /* Ajustez la valeur en fonction de la hauteur du contenu */
           }
         
-        .container_dropdown{
+        .dropdown{
             width: 45%;
+        }
+        .container_dropdown{
+            width: 100%;
             
             
             .dropdown_header{

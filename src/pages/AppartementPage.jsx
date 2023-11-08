@@ -46,7 +46,7 @@ export function AppartementPage(){
                             <h2>{selectedAppartement.location}</h2>
                             <div className="tag_container">
                             {selectedAppartement.tags.map((tag) => 
-                                    <span>{tag}</span>
+                                    <span className="tag">{tag}</span>
                                 )
                             }
                             </div>
@@ -61,7 +61,7 @@ export function AppartementPage(){
                             </div>
                         </div>
                     </div>
-                    <div className="dropdown">
+                    <div className="dropdowns">
                         {/* <div className="container_dropdown">
                             <div className="dropdown_header">
                                 <h3 className="dropdown_title">Description</h3>
