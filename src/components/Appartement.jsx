@@ -8,10 +8,7 @@ function Appartement(props) {
   return (
     <article className='article-appartement'>
       <Link 
-      to="/appartement" 
-      state={{
-        appartementId: props.id
-      }}>
+      to={`/appartement/${props.id}`} >
         <div className='img-article'>
           <img className='img' src={props.cover}></img>
         </div>

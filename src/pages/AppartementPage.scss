@@ -4,13 +4,54 @@ main{
     margin: 10px 5%;
     .divImageAppartement{
 
+        .dotsdiv{
+            color: white;
+            position: absolute;
+            transform: translate(0, -45px);
+            text-align: center;
+            WIDTH: 90%;
+            font-size: 24px;
+        
+        }
+       
+        .fa-chevron-left,
+        .fa-chevron-right {
+            position: absolute;
+            top: 40%;
+            transform: translateY(-50%);
+            font-size: 32px; /* Ajustez la taille de la police selon vos besoins */
+            cursor: pointer;
+            color: white;
+        }
+
+        .fa-chevron-left {
+        left: 6%; /* Ajustez la distance à gauche selon vos besoins */
+        }
+
+        .fa-chevron-right {
+        right: 6%; /* Ajustez la distance à droite selon vos besoins */
+        }
+
         .image_appartement{
             width: 100%;
             object-fit: cover;
             height: 415px;
             border-radius: 20px;
+            animation: fadeIn linear 0.7s;
+            transition: opacity 1s;
+            
+            
 
         }
+
+        @keyframes fadeIn {
+            0% {
+              opacity: 0;
+            }
+            100% {
+              opacity: 1;
+            }
+          }
     }
     .appartement_container{
         .appartement_content{

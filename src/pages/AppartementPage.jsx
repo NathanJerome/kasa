@@ -2,42 +2,74 @@ import React, { useEffect, useState } from "react";
 import './AppartementPage.scss'
 import  Header from '../components/Header'
 import Footer from '../components/Footer'
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useParams  } from "react-router-dom";
 import DropdownInfo from '../components/DropdownInfo';
 
 
 
-export function AppartementPage(){
-    const [isVisible, setIsVisible] = useState(false)
-    const showContent = () => {
-        setIsVisible (!isVisible);
+export function AppartementPage() {
+    const [isVisible, setIsVisible] = useState(false);
+    const [selectedAppartement, setSelectedAppartement] = useState(null);
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const { id } = useParams();
+  
+    useEffect(() => {
+      if (!id) return;
+  
+      function fetchAppartementData() {
+        fetch("/logements.json")
+          .then((response) => response.json())
+          .then((appartements) => {
+            console.log("Appartements:", appartements);
+            const foundAppartement = appartements.find(
+              (appartement) => appartement.id === id
+            );
+            console.log("Selected Appartement:", foundAppartement);
+            setSelectedAppartement(foundAppartement || null);
+            setCurrentIndex(0);
+          })
+          .catch((error) => {
+            console.error("Error fetching data:", error);
+          });
+      }
+  
+      fetchAppartementData();
+    }, [id]);
+  
+    function MoveNext() {
+      if (selectedAppartement && selectedAppartement.pictures) {
+        setCurrentIndex((prevIndex) =>
+          prevIndex === (selectedAppartement.pictures.length || 0) - 1
+            ? 0
+            : prevIndex + 1
+        );
+      }
     }
-
-    const location = useLocation()
-    const [selectedAppartement, setSelectedAppartement] = useState(null)
-    console.log("location", location);
-    console.log("our location is:", location.state.appartementId)
-
-    useEffect(fetchAppartementData, [])
-
-    function fetchAppartementData(){
-        fetch("logements.json").then((response) => response.json())
-        .then((appartements) => {
-           const selectedAppartement =  appartements.find(appartement => appartement.id === location.state.appartementId)
-           setSelectedAppartement(selectedAppartement);
-        
-        })
-        .catch(console.error)
+  
+    function MovePrev() {
+      if (selectedAppartement && selectedAppartement.pictures) {
+        setCurrentIndex((prevIndex) =>
+          prevIndex === 0
+            ? (selectedAppartement.pictures.length || 0) - 1
+            : prevIndex - 1
+        );
+      }
     }
+  
+    if (!selectedAppartement) return <div>Loading...</div>;
 
-    if(selectedAppartement == null) return <div>...Chargement</div>
 
     return(
         <>
             <Header />
             <main>
                 <div className="divImageAppartement">
-                    <img className="image_appartement" src={selectedAppartement.pictures[0]} alt="image d un appartement"></img>
+                    <i class="fa-solid fa-chevron-left" onClick={MovePrev}></i>
+                    <img className="image_appartement" src={selectedAppartement.pictures[currentIndex]} alt="image d un appartement"></img>
+                    <i class="fa-solid fa-chevron-right" onClick={MoveNext}></i>
+                    <div className="dotsdiv">
+                    {currentIndex +1}/{selectedAppartement.pictures.length}
+                    </div>
                 </div>
                 <div className="appartement_container">
                     <div className="appartement_content">

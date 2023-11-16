@@ -23,13 +23,13 @@ const router = createBrowserRouter([
         <AppartementPage />
      </>
   },
-  {
-    path: "/appartement/",
-    element: 
-     <>
-        <AppartementPage />
-     </>
-  },
+  // {
+  //   path: "/appartement/",
+  //   element: 
+  //    <>
+  //       <AppartementPage />
+  //    </>
+  // },
   {
     path: "/about",
     element: 

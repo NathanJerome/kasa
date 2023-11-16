@@ -16,7 +16,7 @@ function DropdownInfo(props) {
                     <i className="fa-solid fa-chevron-up" onClick={showContent}></i>
                 </div>
                 <div className="dropdown_text">
-                    {isVisible && <p>{description}</p>}
+                    {isVisible && <div>{description}</div>}
                 </div>
             </div>
         </div>
