@@ -25,23 +25,17 @@
                 position: relative;
                 color: $white;
                 width: 30px;
-                @keyframes scrollDown {
-                    from{
-                        transform: rotateX(180deg);
-                    }
-                    to{
-                        transform: rotateX(360deg);
-                    }
-                }
-                @keyframes scrollUp {
-                    from{
-                        transform: rotateX(360deg);
-                    }
-                    to{
-                        transform: rotateX(180deg);
-                    }
+                animation: scrollDown 0.5s forwards; /* Ajout de l'animation */
+
+                &.rotate-up {
+                    animation-name: scrollUp;
                 }
 
+                &.rotate-down {
+                    animation-name: scrollDown;
+                }
+                
+               
             }
             h3{
                 color: $white;
@@ -51,6 +45,10 @@
         }
        
         .dropdown_text{
+            
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out; /* Ajout de la transition */
+
             p{
                background-color: $greyBackGround;
                margin: 0;
@@ -58,3 +56,26 @@
         }
     }
  }
+
+ .dropdown.expanded .container_dropdown .dropdown_text {
+    opacity: 1; /* Lorsque le dropdown est étendu, l'opacité passe à 1 */
+}
+
+
+ @keyframes scrollUp {
+    from {
+        transform: rotateX(360deg);
+    }
+    to {
+        transform: rotateX(180deg);
+    }
+}
+
+@keyframes scrollDown {
+    from {
+        transform: rotateX(180deg);
+    }
+    to {
+        transform: rotateX(360deg);
+    }
+}

@@ -25,3 +25,18 @@ footer{
     text-align: center;
 
 }
+
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column; /* Changement de la direction en colonne */
+        align-items: center; /* Centrage des éléments */
+    }
+
+    .logo-footer {
+        
+    }
+
+    .p-reserved {
+        width: 30%;
+    }
+}

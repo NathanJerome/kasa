@@ -24,12 +24,12 @@ export function AppartementPage() {
             const foundAppartement = appartements.find(
               (appartement) => appartement.id === id
             );
-            console.log("Selected Appartement:", foundAppartement);
+            console.log("Appartement selectionné:", foundAppartement);
             setSelectedAppartement(foundAppartement || null);
             setCurrentIndex(0);
           })
           .catch((error) => {
-            console.error("Error fetching data:", error);
+            console.error("Erreur lors de la reception des données:", error);
           });
       }
   

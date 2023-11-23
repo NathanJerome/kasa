@@ -145,22 +145,7 @@ main{
                     position: relative;
                     color: $white;
                     width: 30px;
-                    @keyframes scrollDown {
-                        from{
-                            transform: rotateX(180deg);
-                        }
-                        to{
-                            transform: rotateX(360deg);
-                        }
-                    }
-                    @keyframes scrollUp {
-                        from{
-                            transform: rotateX(360deg);
-                        }
-                        to{
-                            transform: rotateX(180deg);
-                        }
-                    }
+
 
                 }
                 h3{
@@ -180,3 +165,46 @@ main{
      }
     }
 }
+
+@media (max-width: 768px){
+        main .appartement_container .dropdowns {
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        main .appartement_container .dropdowns .dropdown {
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        main .appartement_container .appartement_content .owner_info .owner_star {
+            order: 3;
+        }
+
+        main .appartement_container .appartement_content .owner_info .owner_img {
+            order: 1;
+            margin-left: 1%;
+        }
+
+        main .appartement_container .appartement_content .owner_info h2 {
+            order: 2;
+            width: 21%;
+        }
+
+        .appartement_info {
+            width: 100%;
+        }
+
+        main .appartement_container .appartement_content{
+            width: 100%;
+            flex-direction: column;
+        }
+
+        main .appartement_container .appartement_content .owner_info {
+            width: 100%;
+            flex-direction: row-reverse;
+            flex-wrap: nowrap;
+            text-align: start;
+
+        }
+    }

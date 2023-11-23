@@ -1,0 +1,17 @@
+@use '../scss/variables.scss' as *;
+
+.img-banner{
+    height: 223px;
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(0.7) blur(1px);
+    border-radius: 40px;
+    position: relative;
+
+}
+
+@media (max-width: 768px){
+    .banner {
+        width: 90%;
+    }
+}

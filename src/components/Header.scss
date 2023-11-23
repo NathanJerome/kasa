@@ -32,3 +32,25 @@ a {
 .active {
     text-decoration: underline;
 }
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: row;
+        width: 80%;
+    }
+
+    .navbar-list {
+        justify-content: right;
+        align-items: center;
+        margin-top: 20px;
+        gap: 37%;
+        width: 50%;
+        margin-left: 5%;
+
+    }
+
+    li {
+        margin: 10px 0; /* Espacement entre les éléments de la liste */
+        text-transform: uppercase;
+    }
+}

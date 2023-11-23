@@ -9,11 +9,13 @@ function DropdownInfo(props) {
         setIsVisible (!isVisible);
     }
     return(
-        <div className="dropdown">
+        <div className={`dropdown ${isVisible ? 'expanded' : ''}`}>
             <div className="container_dropdown">
                 <div className="dropdown_header">
                     <h3 className="dropdown_title">{title}</h3>
-                    <i className="fa-solid fa-chevron-up" onClick={showContent}></i>
+                <i
+                        className={`fa-solid fa-chevron-up ${isVisible ? 'rotate-up' : ''}`}
+                        onClick={showContent}></i>
                 </div>
                 <div className="dropdown_text">
                     {isVisible && <div>{description}</div>}

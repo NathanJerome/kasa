@@ -26,3 +26,24 @@
     top: 37%;
 
 }
+
+@media (max-width: 768px) {
+    .banner {
+        width: 80%;
+    
+        .p-banner {
+            color: white;
+            position: relative;
+            font-family: Montserrat;
+            font-size: 40PX;
+            margin: 0;
+            font-weight: 600;
+            width: 56%;
+            /* text-align: center; */
+            top: 35%;
+            margin-left: 10px;
+        }
+    }
+
+
+}

@@ -37,3 +37,41 @@
         max-height: 2px;
     }
 }
+
+@media (max-width: 768px) {
+    .article-appartement {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .img-article {
+        width: 100%; /* La largeur de l'image occupe maintenant 100% de la largeur disponible */
+        height: auto; /* Ajustement de la hauteur de l'image en fonction de sa largeur */
+        margin-bottom: 20px; /* Espace entre les articles */
+    }
+
+    .name {
+        transform: none; /* Annulation de la transformation */
+        margin-top: 10px; /* Espace au-dessus du nom */
+    }
+
+    body .background-grey .flex-appartement {
+    
+        display: flex;
+        flex-wrap: wrap;
+        padding-bottom: 30px;
+        position: relative;
+        justify-content: center;
+        width: 100%;
+    }
+
+    body .background-grey {
+
+        WIDTH: 80%;
+    }
+
+    body .background-grey {
+        background-color: white;
+    }
+}
