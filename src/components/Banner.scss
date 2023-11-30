@@ -12,7 +12,12 @@
     object-fit: cover;
     filter: brightness(0.7) blur(1px);
     border-radius: 40px;
-    position: absolute;
+    &.app-img-banner{
+        position: absolute;
+    }
+    &.about-img-banner{
+        position: relative;
+    }
 
 }
 .p-banner{
@@ -38,8 +43,9 @@
             font-size: 40PX;
             margin: 0;
             font-weight: 600;
-            width: 56%;
-            /* text-align: center; */
+            /*width: 56%;*/
+            min-width: 56%;
+            text-align: left;
             top: 35%;
             margin-left: 10px;
         }

@@ -25,6 +25,7 @@ function App() {
     <Banner 
       src="banner_img.png"
       txt="Chez vous, partout et ailleurs"
+      isAppPage={true}
     />
     <div className='background-grey'>
         <div className='flex-appartement'>
