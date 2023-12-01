@@ -12,14 +12,17 @@ body{
         position: relative;
         border-radius: 40px;
         margin: 30px 5%;
+        display: flex;
+        align-items: center;
         .flex-appartement{
             display: flex;
             flex-wrap: wrap;
-            margin-left: 5%;
-            margin-right: 5%;
+            /* margin-left: 7%; */
+            /* margin-right: 6%; */
             padding-bottom: 30px;
-            position: relative;
-            justify-content: space-evenly;
+            /* position: relative; */
+            /* width: 100%; */
+            justify-content: center;
         }
     }
 }
